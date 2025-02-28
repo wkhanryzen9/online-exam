@@ -1,0 +1,1 @@
+q1 = "select result_master.qid from result_master, que_paper where result_master.qid = que_paper.qid and result_master.ans = que_paper.answer and result_master.sid='$stu'";

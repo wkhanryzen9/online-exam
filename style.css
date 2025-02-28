@@ -1,0 +1,8 @@
+#warning-sign{
+    color: rgb(255, 102, 102);
+    /* font-size: 40px; */
+}
+
+#result{
+    border: 2px solid black;
+}
