@@ -15,10 +15,9 @@ $stu = $_SESSION['student'];
 
 <?php include 'Components/head.php'; ?>
 <?php include 'Components/stu_header.php'; ?>
-    
-    <div class="w-1/2 bg-slate-400">
-        <h2>STUDENT PROFILE</h2>
-        <?php
+
+    <h2>STUDENT PROFILE</h2>
+    <?php
         require 'conn.php';
         $sql = "select * from reg where uname='$stu'";
         $q = mysqli_query($conn, $sql);
@@ -27,92 +26,79 @@ $stu = $_SESSION['student'];
         }
         $img = $r['image'];
         ?>
-        
 
-<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <h1 class="text-3xl text-slate-700 font-bold">Profile Details</h1>
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <!-- <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
-            <tr>
-                <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
-                    Product name
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Color
-                </th>
-                <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
-                    Category
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Price
-                </th>
-            </tr>
-        </thead> -->
-        <tbody>
-            <tr class="border-b border-gray-200 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                    Apple MacBook Pro 17"
-                </th>
-                <td class="px-6 py-4">
-                    Silver
-                </td>
-            </tr>
-            <tr class="border-b border-gray-200 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                    Microsoft Surface Pro
-                </th>
-                <td class="px-6 py-4">
-                    White
-                </td>
-                <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    Laptop PC
-                </td>
-                <td class="px-6 py-4">
-                    $1999
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    
 </div>
-
-        <table border='1'>
-            <tr>
-                <td>Username</td>
-                <th><?php echo $stu ?></th>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <th><?php echo $r['sname'] ?></th>
-            </tr>
-            <tr>
-                <td>Phone</td>
-                <th><?php echo $r['phone'] ?></th>
-            </tr>
-            <tr>
-                <td>Date of Birth</td>
-                <th><?php echo $r['dob'] ?></th>
-            </tr>
-            <tr>
-                <td>Course</td>
-                <th><?php echo $r['course'] ?></th>
-            </tr>
-            <tr>
-                <td>City</td>
-                <th><?php echo $r['city'] ?></th>
-            </tr>
-            <tr>
-                <td>State</th>
-                <th><?php echo $r['state'] ?></th>
-            </tr>
-            <tr>
-                <td>Image</td>
-                <th><?php echo "<img src='$img' height='100'>" ?></th>
-            </tr>
-            <tr>
-                <td>For Edit your Profile</td>
-                <th><a href="edit_stu.php" style="color:white; text-decoration: none;">Click Here</a></th>
-            </tr>
-        </table>
+<div class="bg-white rounded-xl mx-2 overflow-hidden shadow rounded-lg border">
+    <div class="px-4 py-5 sm:px-6">
+        <h3 class="text-lg leading-6 font-medium text-gray-900">
+            User Profile
+        </h3>
+        <p class="mt-1 max-w-2xl text-sm text-gray-500">
+            This is some information about the user.
+        </p>
     </div>
+    <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+        <dl class="sm:divide-y sm:divide-gray-200">
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                    Username
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    <?php echo $stu ?>
+                </dd>
+            </div>
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                    Full name
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                <?php echo $r['sname'] ?>
+                </dd>
+            </div>
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                    Date of Birth
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                <?php echo $r['dob'] ?>
+                </dd>
+            </div>
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                    Course
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                <?php echo $r['course'] ?>
+                </dd>
+            </div>
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                    Phone number
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                <?php echo $r['contact'] ?>
+                </dd>
+            </div>
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                    Address
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                <?php echo $r['address'] ?><br>
+                <?php echo $r['city'] ?>, <?php echo $r['state'] ?> <?php echo $r['pin'] ?>
+                </dd>
+            </div>
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                    Edit Information
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                <a class="text-slate-200 text-md font-semibold px-4 py-1 bg-slate-700 rounded-lg" href="edit_stu.php">Click Here</a>
+                </dd>
+            </div>
+        </dl>
+    </div>
+</div>
 
 <?php require 'Components/footer.php'; ?>
