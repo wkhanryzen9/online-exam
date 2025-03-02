@@ -22,11 +22,10 @@ if(isset($_POST['update'])){
     $img_name = $_FILES['file']['name'];
     $img_temp = $_FILES['file']['tmp_name'];
     $old_img = $_POST['old_image'];
-    $old_img = substr($old_img, 12);
-    // echo $old_img;
-    // echo $img_name;
-    $check = ($old_img==$img_name) ? 'true' : 'false';
-    // echo $check;
+    $old_filename = substr($old_img, 12);
+
+    // $check = ($old_img==$img_name) ? 'true' : 'false';
+
     $folder = 'UploadImage/'.$img_name;
 
     $query1 = "UPDATE reg SET sname='$sname', course='$course', dob='$dob', contact='$contact', `address`='$address', city='$city', `state`='$state', `image`='$folder' WHERE uname='$stu'";
@@ -36,6 +35,7 @@ if(isset($_POST['update'])){
     if($img_name!='' and $img_name!==$old_img){
         mysqli_query($conn, $query1);
         move_uploaded_file($img_temp, $folder);
+        unlink('UploadImage/_MG_9116.JPG');
         echo 'Image Updated!';
     }
     elseif($img_name==$old_img){
@@ -46,7 +46,6 @@ if(isset($_POST['update'])){
         echo 'Image not updated!';
     }
     
-    unlink('UploadImage/_MG9116.JPG');
     // if($old_img==$folder){
     //     echo 'true';
     // }else{
