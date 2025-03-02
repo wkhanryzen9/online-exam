@@ -32,10 +32,10 @@ if(isset($_POST['update'])){
 
     $query2 = "UPDATE reg SET sname='$sname', course='$course', dob='$dob', contact='$contact', `address`='$address', city='$city', `state`='$state' WHERE uname='$stu'";
 
-    if($img_name!='' and $img_name!==$old_img){
+    if($img_name!='' and $img_name!==$old_filename){
         mysqli_query($conn, $query1);
         move_uploaded_file($img_temp, $folder);
-        unlink('UploadImage/_MG_9116.JPG');
+        unlink($old_img);
         echo 'Image Updated!';
     }
     elseif($img_name==$old_img){
