@@ -28,7 +28,7 @@ $stu = $_SESSION['student'];
         $img = $r['image'];
         ?>
         <div style="width: 100px; height: 100px; overflow: hidden;">
-            <img style="width: 100%; object-fit: cover;" src="<?php echo $img; ?>" alt="">
+            <img style="width: 100%; object-fit: cover; object-position: top;" src="<?php echo $img; ?>" alt="">
         </div>
         <form method="post">
         <table border='1'>
@@ -82,7 +82,7 @@ $stu = $_SESSION['student'];
                 </p>
             </div>
             <div style="width: 100px; height: 100px; border-radius: 50%;" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex justify-center items-center">
-                <img style="border-radius: 50%; width: 92%; height: 92%; object-fit: cover;" src="<?php echo $img; ?>" alt="">
+                <img style="border-radius: 50%; width: 92%; height: 92%; object-fit: cover; object-position: top;" src="<?php echo $img; ?>" alt="">
             </div>
         </div>
     </div>

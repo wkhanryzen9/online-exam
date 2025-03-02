@@ -17,6 +17,6 @@
         <path d="M5 12h14M12 5l7 7-7 7"></path>
       </svg></a>
     </nav>
-    <img style="object-fit: cover;" title="Profile Pic" class="inline-block size-10 rounded-full ring-2 ring-white" src="<?php echo $img; ?>" alt="">
+    <img style="object-fit: cover; object-position: top;" title="Profile Pic" class="inline-block size-10 rounded-full ring-2 ring-white" src="<?php echo $img; ?>" alt="">
   </div>
 </header>
