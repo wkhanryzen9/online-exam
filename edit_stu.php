@@ -27,55 +27,13 @@ $stu = $_SESSION['student'];
         }
         $img = $r['image'];
         ?>
-        <div style="width: 100px; height: 100px; overflow: hidden;">
-            <img style="width: 100%; object-fit: cover; object-position: top;" src="<?php echo $img; ?>" alt="">
-        </div>
-        <form method="post">
-        <table border='1'>
-            <tr>
-                <td>Username</td>
-                <th><?php echo $stu ?></th>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <th><input type="text" name="sname" value="<?php echo $r['sname']; ?>"></th>
-            </tr>
-            <tr>
-                <td>Phone</td>
-                <th><input type="text" name="phone" value="<?php echo $r['phone']; ?>"></th>
-            </tr>
-            <tr>
-                <td>Date of Birth</td>
-                <th><input type="text" name="dob" value="<?php echo $r['dob']; ?>"></th>
-            </tr>
-            <tr>
-                <td>Course</td>
-                <th><input type="text" name="course" value="<?php echo $r['course']; ?>"></th>
-            </tr>
-            <tr>
-                <td>City</td>
-                <th><input type="text" name="city" value="<?php echo $r['city']; ?>"></th>
-            </tr>
-            <tr>
-                <td>State</th>
-                <th><input type="text" name="state" value="<?php echo $r['state'] ?>"></th>
-            </tr>
-            <tr>
-                <td>Image</td>
-                <th><input type="file" name="file"></tr>
-            </tr>
-            <tr>
-                <td>For Edit your Profile</td>
-                <th><a href="edit_stu.php" style="color:white; text-decoration: none;">Click Here</a></th>
-            </tr>
-        </table>
-        </form>
-        <div class="bg-white rounded-xl mx-2 overflow-hidden shadow rounded-lg border">
-    <div class="px-4 py-5 sm:px-6">
-        <div class="px-4 w-full flex justify-between items-center">
+<h2 class="text-2xl ml-3 my-2 text-blue-700 font-bold">EDIT PROFILE</h2>   
+<div class="bg-white rounded-xl mx-2 overflow-hidden shadow rounded-lg border">
+    <!-- <div class="px-4 py-5 sm:px-6">
+        <div class="px-2 w-full flex justify-between items-center">
             <div>
                 <h3 class="text-lg leading-6 font-medium text-gray-900">
-                    User Profile
+                    Edit Profile
                 </h3>
                 <p class="mt-1 max-w-2xl text-sm text-gray-500">
                     This is some information about the user.
@@ -85,7 +43,7 @@ $stu = $_SESSION['student'];
                 <img style="border-radius: 50%; width: 92%; height: 92%; object-fit: cover; object-position: top;" src="<?php echo $img; ?>" alt="">
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
     <form action="edit_stu_config.php" method="post" enctype="multipart/form-data">
         <dl class="sm:divide-y sm:divide-gray-200">

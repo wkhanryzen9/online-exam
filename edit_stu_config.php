@@ -46,6 +46,7 @@ if(isset($_POST['update'])){
         echo 'Image not updated!';
     }
     
+    header('Location: stu_profile.php');
     // if($old_img==$folder){
     //     echo 'true';
     // }else{
